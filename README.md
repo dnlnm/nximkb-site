@@ -52,14 +52,17 @@ All commands are run from the root of the project:
 
 This project is configured to deploy to **Cloudflare Pages** using the `@astrojs/cloudflare` adapter. 
 
-### Automated Deployment
-Deployment is automated via GitHub Actions on every push to the `master` branch (see `.github/workflows/deploy.yml`).
+### Deployment Options
 
-### Manual Deployment
-You can also deploy manually using:
-```bash
-npm run deploy
-```
+1.  **Git Integration (Recommended)**: 
+    Connect this repository directly to Cloudflare Pages in the [Cloudflare Dashboard](https://dash.cloudflare.com/). Cloudflare will automatically build and deploy your site on every push to the `master` branch.
+
+2.  **Manual Deployment**:
+    You can build and deploy manually from your terminal using:
+    ```bash
+    npm run build
+    npm run deploy
+    ```
 
 ---
 
