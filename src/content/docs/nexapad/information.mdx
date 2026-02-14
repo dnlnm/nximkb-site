@@ -4,6 +4,20 @@ description: A guide in my new Starlight docs site.
 ---
 
 import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import { MuxPlayer } from "@mux/mux-player-astro";
+import nexapadRender from '../../../assets/nexapad/nexapad-render.png';
+import layoutImg from '../../../assets/nexapad/nexapad-layout.png';
+import structureImg from '../../../assets/nexapad/structure.png';
+import bottom1 from '../../../assets/nexapad/bottom-1.jpeg';
+import top1 from '../../../assets/nexapad/top-1.jpeg';
+import top2 from '../../../assets/nexapad/top-2.jpeg';
+import pcb1 from '../../../assets/nexapad/pcb-1.jpeg';
+import pcb2 from '../../../assets/nexapad/pcb-2.jpeg';
+import stand14 from '../../../assets/nexapad/stand-14.jpeg';
+import stand40 from '../../../assets/nexapad/stand-40.jpeg';
+import oled1 from '../../../assets/nexapad/oled-1.png';
+
+import { Image } from 'astro:assets';
 
 ## Links
  
@@ -21,7 +35,9 @@ import { LinkCard, CardGrid } from '@astrojs/starlight/components';
 
 ---
 
-![NexaPad](../../../assets/nexa-mat.webp)
+<div class="image-container">
+  <Image src={nexapadRender} alt="NexaPad" />
+</div>
 
 
 :::caution
@@ -51,23 +67,67 @@ _Based on interest check._
 
 ## 3\. Design
 
+### 3.1 Layout
+
+<div class="image-container">
+  <Image src={layoutImg} alt="NexaPad Layout" />
+  <p class="caption">NexaPad Layout</p>
+</div>
+
+The layout is rather simple.
+
 ### 3.1 Structure
 
-The macropad will be using sandwich mount.
+<div class="image-container">
+  <Image src={structureImg} alt="NexaPad Structure" />
+  <p class="caption">Exploded view of NexaPad</p>
+</div>
+
+The design is rather simple. 3x4 keys matrix with a rotary encoder and an OLED screen. The macropad will be using sandwich mount and can be assembled with just four M3 screws.
+Most of the parts are 3D printed. The plate is made of FR4.
 
 ### 3.2 Case
 
-![NexaPad](../../../assets/nexa-mat.webp)
+<CardGrid>
+  <div class="image-container">
+    <Image src={top1} alt="Top Case View 1" />
+    <p class="caption">Top Case - Angle 1</p>
+  </div>
+  <div class="image-container">
+    <Image src={top2} alt="Top Case View 2" />
+    <p class="caption">Top Case - Angle 2</p>
+  </div>
+</CardGrid>
+
+<CardGrid>
+  <div class="image-container">
+    <Image src={bottom1} alt="Bottom Case View 1" />
+    <p class="caption">Bottom Case - Angle 1</p>
+  </div>
+  <div class="image-container">
+    <Image src={bottom1} alt="Bottom Case View 2" />
+    <p class="caption">Bottom Case - Angle 2</p>
+  </div>
+</CardGrid>
 
 ### 3.3 Stand
 
-There will be two options for the stand. The stand will be available in 14 0r 40 degree. The stand is magnetic and can be interchangeable.
+There will be two options for the stand; in 14° or 40° angle. The stand is magnetic and can be interchangeable.
 
-![NexaPad](../../../assets/nexa-mat.webp)
+<CardGrid>
+  <div class="image-container">
+    <Image src={stand14} alt="14 Degree Stand" />
+    <p class="caption">14° Magnetic Stand</p>
+  </div>
+  <div class="image-container">
+    <Image src={stand40} alt="40 Degree Stand" />
+    <p class="caption">40° Magnetic Stand</p>
+  </div>
+</CardGrid>
 
 ---
 
-## 4\. PCB
+## 4. PCB
 
 - 1.6mm thickness
 - USB-C
@@ -76,7 +136,17 @@ There will be two options for the stand. The stand will be available in 14 0r 40
 - ESD protection
 - Per-key RGB
 
-![NexaPad](../../../assets/nexa-mat.webp)
+<CardGrid>
+  <div class="image-container">
+    <Image src={pcb1} alt="NexaPad PCB Front" />
+    <p class="caption">PCB Front View</p>
+  </div>
+  <div class="image-container">
+    <Image src={pcb2} alt="NexaPad PCB Back" />
+    <p class="caption">PCB Back View</p>
+  </div>
+</CardGrid>
+
 
 :::note
 The PCB components will come pre soldered except for encoder and OLED pin header,
@@ -88,7 +158,26 @@ which will be manually soldered by me.
 ## 5\. Firmware
 
 The device will come with QMK-based firmware with two options. VIA or Vial support.  
-Both firmware will be release on Github.
+Both firmware is fully programmable and will be made open source once it launches.
+
+### 5.1 OLED Display
+
+The OLED display mainly will be use to show the current layer of NexaPad. There will be three styles of the indicator.
+
+<CardGrid>
+  <div class="image-container">
+    <Image src={oled1} alt="OLED Style 1" />
+    <p class="caption">Style 1: Default</p>
+  </div>
+  <div class="image-container">
+    <Image src={oled1} alt="OLED Style 2" />
+    <p class="caption">Style 2: Minimal</p>
+  </div>
+  <div class="image-container">
+    <Image src={oled1} alt="OLED Style 3" />
+    <p class="caption">Style 3: Badge</p>
+  </div>
+</CardGrid>
 
 ---
 
@@ -99,7 +188,7 @@ The sets will come with all the things you need except switches.
 | Parts                 | Notes                       |
 | --------------------- | --------------------------- |
 | Case (Top and Bottom) | 3D-printed PLA              |
-| Top Cover             | 3D-printed PLA              |
+| Accent Top            | 3D-printed PLA              |
 | Stand                 | 14° or 40° (3D-printed PLA) |
 | Keycaps               | 14x (3D-printed PLA)        |
 | Knob                  | 1x (3D-printed PLA)         |
@@ -129,3 +218,23 @@ _Soon._
 ### 9.1 NexaHub Companion App
 
 currently have no plans for a formal release. However, if there is enough interest, I am open to releasing it 'as-is' with limited support. Please note that it has only been tested on my personal system; if anyone is interested in beta testing later, your help would be greatly appreciated.
+
+<MuxPlayer
+  playbackId="8vM5uZr00Q9dEKIvk1sDlP02qg4Qb86m02J4SNJx9sVD00k"
+  metadata={{
+    video_title: 'NexaHub Companion App',
+  }}
+  style={{
+    display: 'block',
+    aspectRatio: '16/9',
+    backgroundColor: '#000',
+    margin: '1rem 0 2rem',
+  }}
+  primaryColor="#ffffffff"
+  secondaryColor="#000000ff"
+  accentColor="#00a537ff"
+  defaultShowRemainingTime={false}
+/>
+
+## 10. More Images
+

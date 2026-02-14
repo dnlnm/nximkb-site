@@ -3,12 +3,12 @@ title: Welcome to NximKB
 description: Get started building your docs site with Starlight.
 template: splash # Remove or comment out this line to display the site sidebar on this page.
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Custom mechanical keyboards. Based in Malaysia.
   image:
     file: ../../assets/icon.png
   actions:
-    - text: NexaPad
-      link: /nexapad/information
+    - text: Docs
+      link: /docs
       icon: right-arrow
     - text: Blog
       link: /blog
@@ -16,19 +16,44 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import nexapadRender from '../../assets/nexapad/nexapad-render.png';
+import cloakxtRender from '../../assets/cloak-xt/cloak-xt-render.png';
+import pulsefrlRender from '../../assets/pulse-frl/pulse-frl-render.png';
+import kazu10Render from '../../assets/kazu10/kazu10-render.png';
+
+
+## Current Projects
+
+<CardGrid>
+  <a href="/nexapad/information/" style="text-decoration: none;">
+    <Card title="NexaPad" icon="star">
+      Macropad with a knob and OLED display.
+      <Image src={nexapadRender} alt="NexaPad" data-zoom-off style="aspect-ratio: 16/9; object-fit: cover; width: 100%; border-radius: 0.5rem; margin-top: 1rem;" />
+    </Card>
+  </a>
+</CardGrid>
 
 ## Past Projects
 
-<CardGrid stagger>
-	<Card title="Cloak-XT" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Pulse FRL" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
+<CardGrid>
+	<a href="/cloak-xt/information/" style="text-decoration: none;">
+		<Card title="Cloak-XT" icon="star">
+			60% Keyboards with a hotswap knob and extra keys.
+			<Image src={cloakxtRender} alt="Cloak-XT" data-zoom-off style="aspect-ratio: 16/9; object-fit: cover; width: 100%; border-radius: 0.5rem; margin-top: 1rem;" />
+		</Card>
+	</a>
+	<a href="/pulse-frl/information/" style="text-decoration: none;">
+		<Card title="Pulse FRL" icon="star">
+			FRL layout Keyboard with left extra keys.
+			<Image src={pulsefrlRender} alt="Pulse FRL" data-zoom-off style="aspect-ratio: 16/9; object-fit: cover; width: 100%; border-radius: 0.5rem; margin-top: 1rem;" />
+		</Card>
+	</a>
+	<a href="#" style="text-decoration: none;">
+		<Card title="Kazu10 Macropad" icon="star">
+			Simple macropad using Pro Micro footprint.
+			<Image src={kazu10Render} alt="Kazu10 Macropad" data-zoom-off style="aspect-ratio: 16/9; object-fit: cover; width: 100%; border-radius: 0.5rem; margin-top: 1rem;" />
+		</Card>
+	</a>
 </CardGrid>

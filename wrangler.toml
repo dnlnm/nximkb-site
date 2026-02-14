@@ -1,7 +1,6 @@
 name = "second-saturn"
-main = "dist/_worker.js/index.js"
 compatibility_date = "2024-04-03"
+compatibility_flags = ["nodejs_compat"]
 
-[assets]
-directory = "dist"
-binding = "ASSETS"
+[vars]
+# Add environment variables here
