@@ -15,7 +15,11 @@ import pcb1 from '../../../assets/nexapad/pcb-1.jpeg';
 import pcb2 from '../../../assets/nexapad/pcb-2.jpeg';
 import stand14 from '../../../assets/nexapad/stand-14.jpeg';
 import stand40 from '../../../assets/nexapad/stand-40.jpeg';
-import oled1 from '../../../assets/nexapad/oled-1.png';
+import oledDefault from '../../../assets/nexapad/oled-default.png';
+import oledMinimal from '../../../assets/nexapad/oled-minimal.png';
+import oledBadge from '../../../assets/nexapad/oled-badge.png';
+import viaImg from '../../../assets/nexapad/via-fw.png';
+import vialImg from '../../../assets/nexapad/vial-fw.png';
 
 import { Image } from 'astro:assets';
 
@@ -74,7 +78,7 @@ _Based on interest check._
   <p class="caption">NexaPad Layout</p>
 </div>
 
-The layout is rather simple.
+The layout is rather simple. It's features a compact 3x4 hotswap switches matrix with a rotary encoder and an OLED screen. This provides 15 customizable input for each layer.  
 
 ### 3.1 Structure
 
@@ -83,10 +87,11 @@ The layout is rather simple.
   <p class="caption">Exploded view of NexaPad</p>
 </div>
 
-The design is rather simple. 3x4 keys matrix with a rotary encoder and an OLED screen. The macropad will be using sandwich mount and can be assembled with just four M3 screws.
-Most of the parts are 3D printed. The plate is made of FR4.
+The macropad will be using sandwich mount configuration. The entire unit is secured by four M3 screws that pass through the bottom case, threading into the top frame. This allows for quick assembly/disassembly.
 
 ### 3.2 Case
+
+The primary housing consists of a 3D-printed top frame and a deep bottom case. The top frame is designed to house the keyboard matrix, while the bottom case provides structural support and protection.
 
 <CardGrid>
   <div class="image-container">
@@ -125,6 +130,16 @@ There will be two options for the stand; in 14° or 40° angle. The stand is mag
   </div>
 </CardGrid>
 
+
+### 3.4 Plate
+
+There will be two options for the stand; in 14° or 40° angle. The stand is magnetic and can be interchangeable.
+
+  <div class="image-container">
+    <Image src={stand40} alt="FR4 Plate" />
+    <p class="caption">FR4 Plate</p>
+  </div>
+
 ---
 
 ## 4. PCB
@@ -160,21 +175,33 @@ which will be manually soldered by me.
 The device will come with QMK-based firmware with two options. VIA or Vial support.  
 Both firmware is fully programmable and will be made open source once it launches.
 
+<CardGrid>
+  <div class="image-container">
+    <Image src={viaImg} alt="NexaPad VIA Firmware" />
+    <p class="caption">VIA Firmware</p>
+  </div>
+  <div class="image-container">
+    <Image src={vialImg} alt="NexaPad Vial Firmware" />
+    <p class="caption">Vial Firmware</p>
+  </div>
+</CardGrid>
+
+
 ### 5.1 OLED Display
 
 The OLED display mainly will be use to show the current layer of NexaPad. There will be three styles of the indicator.
 
 <CardGrid>
   <div class="image-container">
-    <Image src={oled1} alt="OLED Style 1" />
+    <Image src={oledDefault} width={200} alt="OLED Style 1" />
     <p class="caption">Style 1: Default</p>
   </div>
   <div class="image-container">
-    <Image src={oled1} alt="OLED Style 2" />
+    <Image src={oledMinimal} width={200} alt="OLED Style 2" />
     <p class="caption">Style 2: Minimal</p>
   </div>
   <div class="image-container">
-    <Image src={oled1} alt="OLED Style 3" />
+    <Image src={oledBadge} width={200} alt="OLED Style 3" />
     <p class="caption">Style 3: Badge</p>
   </div>
 </CardGrid>
