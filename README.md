@@ -31,7 +31,7 @@ This project follows the standard Astro/Starlight structure:
 │   │   │   └── index.mdx # Homepage
 │   └── content.config.ts # Content schema
 ├── astro.config.mjs      # Configuration for Starlight and integrations
-├── wrangler.toml         # Cloudflare Pages configuration
+├── wrangler.toml         # Cloudflare deployment configuration
 └── package.json          # Dependencies and scripts
 ```
 
@@ -45,21 +45,11 @@ All commands are run from the root of the project:
 | `npm run dev`       | Starts local dev server at `localhost:4321` |
 | `npm run build`     | Build the production site to `./dist/`      |
 | `npm run preview`   | Preview the build locally                   |
-| `npm run deploy`    | Deploy to Cloudflare Pages                  |
 | `npm run astro ...` | Run Astro CLI commands                      |
 
 ## 🌐 Deployment
 
-This project is configured to deploy to **Cloudflare Pages** using the `@astrojs/cloudflare` adapter. 
-
-### Automated Deployment
-Deployment is automated via GitHub Actions on every push to the `master` branch (see `.github/workflows/deploy.yml`).
-
-### Manual Deployment
-You can also deploy manually using:
-```bash
-npm run deploy
-```
+This project is configured to deploy to **Cloudflare Workers/Pages** using the `@astrojs/cloudflare` adapter. Deployment is automated via GitHub Actions (see `.github/workflows/deploy.yml`).
 
 ---
 
