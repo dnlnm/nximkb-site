@@ -6,6 +6,11 @@ description: A guide in my new Starlight docs site.
 import { LinkCard, CardGrid } from '@astrojs/starlight/components';
 import { MuxPlayer } from "@mux/mux-player-astro";
 import nexapadRender from '../../../assets/nexapad/nexapad-render.png';
+import nexapadSample1 from '../../../assets/nexapad/sample-1.jpeg';
+import nexapadSample2 from '../../../assets/nexapad/sample-2.jpeg';
+import nexapadSample3 from '../../../assets/nexapad/sample-3.jpeg';
+import nexapadSample4 from '../../../assets/nexapad/sample-4.jpeg';
+import nexapadSample5 from '../../../assets/nexapad/sample-5.jpeg';
 import layoutImg from '../../../assets/nexapad/nexapad-layout.png';
 import structureImg from '../../../assets/nexapad/structure.png';
 import bottom1 from '../../../assets/nexapad/bottom-1.jpeg';
@@ -13,11 +18,12 @@ import top1 from '../../../assets/nexapad/top-1.jpeg';
 import top2 from '../../../assets/nexapad/top-2.jpeg';
 import pcb1 from '../../../assets/nexapad/pcb-1.jpeg';
 import pcb2 from '../../../assets/nexapad/pcb-2.jpeg';
+import plate1 from '../../../assets/nexapad/plate-1.jpeg';
 import stand14 from '../../../assets/nexapad/stand-14.jpeg';
 import stand40 from '../../../assets/nexapad/stand-40.jpeg';
 import oledDefault from '../../../assets/nexapad/oled-default.png';
 import oledMinimal from '../../../assets/nexapad/oled-minimal.png';
-import oledBadge from '../../../assets/nexapad/oled-badge.png';
+import oledBadge from '../../../assets/nexapad/oled-badges.png';
 import viaImg from '../../../assets/nexapad/via-fw.png';
 import vialImg from '../../../assets/nexapad/vial-fw.png';
 
@@ -67,6 +73,31 @@ import { Image } from 'astro:assets';
 
 _Based on interest check._
 
+### Sample
+
+<CardGrid>
+  <div class="image-container">
+    <Image src={nexapadSample1} alt="NexaPad Sample 1" />
+    <p class="caption">NexaPad Sample 1</p>
+  </div>
+  <div class="image-container">
+    <Image src={nexapadSample2} alt="NexaPad Sample 2" />
+    <p class="caption">NexaPad Sample 2</p>
+  </div>
+  <div class="image-container">
+    <Image src={nexapadSample3} alt="NexaPad Sample 3" />
+    <p class="caption">NexaPad Sample 3</p>
+  </div>
+  <div class="image-container">
+    <Image src={nexapadSample4} alt="NexaPad Sample 4" />
+    <p class="caption">NexaPad Sample 4</p>
+  </div>
+  <div class="image-container">
+    <Image src={nexapadSample5} alt="NexaPad Sample 5" />
+    <p class="caption">NexaPad Sample 5</p>
+  </div>
+</CardGrid>
+
 ---
 
 ## 3\. Design
@@ -91,20 +122,20 @@ The macropad will be using sandwich mount configuration. The entire unit is secu
 
 ### 3.2 Case
 
-The primary housing consists of a 3D-printed top frame and a deep bottom case. The top frame is designed to house the keyboard matrix, while the bottom case provides structural support and protection.
+The primary case consists of a 3D-printed top case, bottom case, and top accent. For long-term durability and ease of use, the top case utilizes integrated heat-set inserts to ensure secure and repeatable assembly.
 
 <CardGrid>
   <div class="image-container">
-    <Image src={top1} alt="Top Case View 1" />
+    <Image src={top1} alt="Top Case" />
     <p class="caption">Top Case - Angle 1</p>
   </div>
   <div class="image-container">
-    <Image src={top2} alt="Top Case View 2" />
-    <p class="caption">Top Case - Angle 2</p>
+    <Image src={bottom1} alt="Bottom Case" />
+    <p class="caption">Bottom Case</p>
   </div>
 </CardGrid>
 
-<CardGrid>
+{/* <CardGrid>
   <div class="image-container">
     <Image src={bottom1} alt="Bottom Case View 1" />
     <p class="caption">Bottom Case - Angle 1</p>
@@ -113,7 +144,7 @@ The primary housing consists of a 3D-printed top frame and a deep bottom case. T
     <Image src={bottom1} alt="Bottom Case View 2" />
     <p class="caption">Bottom Case - Angle 2</p>
   </div>
-</CardGrid>
+</CardGrid> */}
 
 ### 3.3 Stand
 
@@ -130,13 +161,16 @@ There will be two options for the stand; in 14° or 40° angle. The stand is mag
   </div>
 </CardGrid>
 
+:::note
+The stand will have the magnet hidden and embedded in the final design.
+:::
 
 ### 3.4 Plate
 
-There will be two options for the stand; in 14° or 40° angle. The stand is magnetic and can be interchangeable.
+The Plate is made out of FR4 material and will be 1.6mm thick.
 
   <div class="image-container">
-    <Image src={stand40} alt="FR4 Plate" />
+    <Image src={plate1} alt="FR4 Plate" />
     <p class="caption">FR4 Plate</p>
   </div>
 
@@ -247,7 +281,7 @@ _Soon._
 currently have no plans for a formal release. However, if there is enough interest, I am open to releasing it 'as-is' with limited support. Please note that it has only been tested on my personal system; if anyone is interested in beta testing later, your help would be greatly appreciated.
 
 <MuxPlayer
-  playbackId="8vM5uZr00Q9dEKIvk1sDlP02qg4Qb86m02J4SNJx9sVD00k"
+  playbackId="Q6RNmAuIT2Rm01JZiO2ugbTzlbkvZaKMPtBrjOPtqDis"
   metadata={{
     video_title: 'NexaHub Companion App',
   }}
@@ -262,6 +296,4 @@ currently have no plans for a formal release. However, if there is enough intere
   accentColor="#00a537ff"
   defaultShowRemainingTime={false}
 />
-
-## 10. More Images
 
